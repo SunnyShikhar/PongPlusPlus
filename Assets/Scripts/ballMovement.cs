@@ -7,6 +7,12 @@ public class ballMovement : MonoBehaviour {
 	public float speed = 30;
 	Vector2 launchPoint;
 
+	public GUIText leftScoreText = null;
+	public GUIText rightScoreText = null;
+
+	int rightscore = 0;
+	int leftscore= 0;
+
 	// Use this for initialization
 	void Start () {
 
@@ -20,9 +26,18 @@ public class ballMovement : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 
 		//if collision on vertical walls
-		if (col.gameObject.name == "leftWall" || col.gameObject.name == "rightWall")
+		if (col.gameObject.name == "leftWall")
 		{
-			resetPosition();
+			rightscore = rightscore + 1;
+			UpdateScore();
+			this.transform.position = launchPoint;
+		}
+
+		if (col.gameObject.name == "rightWall") {
+
+			leftscore = leftscore + 1;
+			UpdateScore();
+			this.transform.position = launchPoint;
 		}
 
 		// Hit the left Racket?
@@ -62,7 +77,9 @@ public class ballMovement : MonoBehaviour {
 	void resetPosition ()
 	{
 		this.transform.position = launchPoint;
-
+		leftscore = 0;
+		rightscore = 0;
+		UpdateScore ();
 	}
 
 	// Update is called at the same rate as physics engine
@@ -72,5 +89,12 @@ public class ballMovement : MonoBehaviour {
 			resetPosition();
 		}
 
+	}
+
+
+	void UpdateScore()
+	{
+		leftScoreText.text = " " + leftscore;
+		rightScoreText.text = " " + rightscore;
 	}
 }
