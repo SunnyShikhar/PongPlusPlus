@@ -620,12 +620,12 @@ GUIText:
   m_Text: 0
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 0, y: -30}
+  m_PixelOffset: {x: 0, y: -50}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 20
+  m_FontSize: 22
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -807,7 +807,7 @@ Transform:
   m_LocalScale: {x: 7, y: 7, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &1825429172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc943d21cf398f149b3855b60f7285fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 30
   leftScoreText: {fileID: 1023910267}
   rightScoreText: {fileID: 2122650449}
 --- !u!1 &1879810753
@@ -1086,12 +1086,12 @@ GUIText:
   m_Text: 0
   m_Anchor: 0
   m_Alignment: 0
-  m_PixelOffset: {x: 0, y: -30}
+  m_PixelOffset: {x: 0, y: -50}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 20
+  m_FontSize: 22
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2

@@ -13,6 +13,10 @@ public class ballMovement : MonoBehaviour {
 	int rightscore = 0;
 	int leftscore= 0;
 
+
+	Vector2 reset = new Vector2(0,0);
+	
+
 	// Use this for initialization
 	void Start () {
 
@@ -20,14 +24,20 @@ public class ballMovement : MonoBehaviour {
 		launchPoint = this.transform.position;
 
 		//Initial velocity
-		GetComponent<Rigidbody2D> ().velocity = Vector2.right * speed;
+		reset = Vector2.right * speed;
+		GetComponent<Rigidbody2D> ().velocity = reset;
+
+
+
 	}
+
 
 	void OnCollisionEnter2D(Collision2D col) {
 
 		//if collision on vertical walls
 		if (col.gameObject.name == "leftWall")
 		{
+			GetComponent<Rigidbody2D>().velocity = reset;
 			rightscore = rightscore + 1;
 			UpdateScore();
 			this.transform.position = launchPoint;
@@ -35,6 +45,7 @@ public class ballMovement : MonoBehaviour {
 
 		if (col.gameObject.name == "rightWall") {
 
+			GetComponent<Rigidbody2D>().velocity = reset;
 			leftscore = leftscore + 1;
 			UpdateScore();
 			this.transform.position = launchPoint;
@@ -94,7 +105,6 @@ public class ballMovement : MonoBehaviour {
 		}
 
 	}
-
 
 	void UpdateScore()
 	{
