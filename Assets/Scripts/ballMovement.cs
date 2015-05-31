@@ -89,6 +89,10 @@ public class ballMovement : MonoBehaviour {
 			resetPosition();
 		}
 
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.LoadLevel (0);
+		}
+
 	}
 
 
